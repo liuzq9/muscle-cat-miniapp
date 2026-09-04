@@ -1,0 +1,102 @@
+@use '../../styles/tokens.scss' as *;
+
+.page {
+  padding: 32rpx;
+}
+.coach {
+  display: flex;
+  align-items: center;
+}
+.avatar {
+  width: 82rpx;
+  height: 82rpx;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: $brand-dark;
+  color: #fff;
+  font-size: 36rpx;
+  font-weight: 700;
+  margin-right: 20rpx;
+}
+.name {
+  font-size: 34rpx;
+  font-weight: 700;
+}
+.label {
+  margin: 34rpx 0 16rpx;
+  font-size: 30rpx;
+  font-weight: 700;
+}
+.label .muted {
+  font-weight: 400;
+  margin-left: 12rpx;
+}
+.course-scroll,
+.date-scroll {
+  white-space: nowrap;
+}
+.course,
+.date {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 18rpx 24rpx;
+  border: 1px solid $line;
+  border-radius: 12rpx;
+  margin-right: 14rpx;
+  font-size: 25rpx;
+}
+.course.active,
+.date.active {
+  background: $brand;
+  border-color: $brand;
+  color: #fff;
+}
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16rpx;
+}
+.slot {
+  padding: 18rpx 8rpx;
+  text-align: center;
+  border-radius: 12rpx;
+  background: #fff4eb;
+  color: $brand-dark;
+  font-size: 27rpx;
+  border: 1px solid transparent;
+}
+.slot text {
+  display: block;
+  margin-top: 8rpx;
+  font-size: 22rpx;
+}
+.slot--booked,
+.slot--blocked {
+  color: #a5a9af;
+  background: #eceef0;
+}
+.slot.selected {
+  border-color: $brand;
+  box-shadow: 0 0 0 2px rgba(232, 93, 4, 0.15);
+}
+.primary {
+  margin-top: 34rpx;
+  background: $brand;
+  color: #fff;
+  border-radius: 14rpx;
+}
+.qr {
+  display: block;
+  width: 360rpx;
+  height: 360rpx;
+  margin: 32rpx auto 0;
+}
+.hint {
+  text-align: center;
+  color: $muted;
+  font-size: 23rpx;
+  margin-top: 18rpx;
+}

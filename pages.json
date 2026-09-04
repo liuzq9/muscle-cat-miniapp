@@ -1,0 +1,21 @@
+{
+  "pages": [
+    { "path": "pages/index/index", "style": { "navigationBarTitleText": "肌肉猫" } },
+    { "path": "pages/coaches/index", "style": { "navigationBarTitleText": "选择教练" } },
+    { "path": "pages/booking/index", "style": { "navigationBarTitleText": "预约私教课" } },
+    { "path": "pages/mine/index", "style": { "navigationBarTitleText": "我的课程" } },
+    { "path": "pages/checkin/index", "style": { "navigationBarTitleText": "扫码核销" } }
+  ],
+  "tabBar": {
+    "color": "#7b8088",
+    "selectedColor": "#e85d04",
+    "backgroundColor": "#ffffff",
+    "borderStyle": "black",
+    "list": [
+      { "pagePath": "pages/index/index", "text": "首页" },
+      { "pagePath": "pages/coaches/index", "text": "教练" },
+      { "pagePath": "pages/mine/index", "text": "我的" }
+    ]
+  },
+  "globalStyle": { "navigationBarTextStyle": "black", "navigationBarBackgroundColor": "#ffffff" }
+}

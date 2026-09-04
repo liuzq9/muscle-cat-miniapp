@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "target": "ESNext",
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    "strict": true,
+    "skipLibCheck": true,
+    "jsx": "preserve",
+    "sourceMap": true,
+    "resolveJsonModule": true,
+    "baseUrl": ".",
+    "paths": { "@/*": ["./*"] },
+    "types": ["@dcloudio/types", "vite/client"]
+  },
+  "include": ["./**/*.ts", "./**/*.d.ts", "./**/*.vue"],
+  "exclude": ["node_modules", "dist", "unpackage"]
+}

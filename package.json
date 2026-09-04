@@ -1,0 +1,49 @@
+{
+  "name": "muscle-cat-miniapp",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev:mp-weixin": "UNI_INPUT_DIR=. uni -p mp-weixin",
+    "build:mp-weixin": "UNI_INPUT_DIR=. uni build -p mp-weixin",
+    "dev:h5": "UNI_INPUT_DIR=. uni",
+    "build:h5": "UNI_INPUT_DIR=. uni build",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "lint": "eslint .",
+    "type-check": "vue-tsc --noEmit",
+    "check": "npm run format:check && npm run lint && npm run type-check",
+    "prepare": "husky"
+  },
+  "dependencies": {
+    "@dcloudio/uni-app": "3.0.0-alpha-5020520260829001",
+    "@dcloudio/uni-ui": "^1.5.5",
+    "@vue/compiler-core": "3.5.42",
+    "@vue/compiler-dom": "3.5.42",
+    "@vue/compiler-sfc": "3.5.42",
+    "@vue/reactivity": "3.5.42",
+    "@vue/runtime-core": "3.5.42",
+    "@vue/runtime-dom": "3.5.42",
+    "@vue/shared": "3.5.42",
+    "vue": "3.4.38"
+  },
+  "devDependencies": {
+    "@dcloudio/types": "^3.4.8",
+    "@dcloudio/uni-mp-weixin": "^3.0.0-alpha-5020520260829001",
+    "@dcloudio/vite-plugin-uni": "3.0.0-alpha-5020520260829001",
+    "@eslint/js": "^9.18.0",
+    "@typescript-eslint/eslint-plugin": "^8.20.0",
+    "@typescript-eslint/parser": "^8.20.0",
+    "eslint": "^9.18.0",
+    "eslint-plugin-vue": "^10.0.0",
+    "husky": "^9.1.7",
+    "lint-staged": "^15.4.3",
+    "prettier": "^3.5.3",
+    "sass": "^1.77.8",
+    "typescript": "^5.4.5",
+    "vite": "^5.2.0",
+    "vue-tsc": "^2.2.0"
+  },
+  "overrides": {
+    "@vue/shared": "3.5.42"
+  }
+}

@@ -1,0 +1,93 @@
+@use '../../styles/tokens.scss' as *;
+
+.page {
+  padding: 32rpx;
+}
+.hero {
+  position: relative;
+  padding: 52rpx 8rpx 42rpx;
+}
+.hero-bg {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.14;
+}
+.eyebrow {
+  color: $brand;
+  font-size: 22rpx;
+  letter-spacing: 2rpx;
+  font-weight: 700;
+}
+.brand {
+  margin-top: 16rpx;
+  font-size: 74rpx;
+  font-weight: 800;
+  letter-spacing: 2rpx;
+}
+.hero-copy {
+  margin: 14rpx 0 34rpx;
+  color: $muted;
+  font-size: 30rpx;
+}
+.primary {
+  margin: 0;
+  width: 100%;
+  background: $brand;
+  color: #fff;
+  border-radius: 14rpx;
+  font-size: 30rpx;
+}
+.intro {
+  margin-bottom: 42rpx;
+}
+.story {
+  margin-top: 18rpx;
+  line-height: 1.7;
+  font-size: 28rpx;
+}
+.meta {
+  margin-top: 20rpx;
+  color: $muted;
+  font-size: 24rpx;
+}
+.coach-heading {
+  margin: 0 0 18rpx;
+}
+.coach-row {
+  display: flex;
+  align-items: center;
+  margin-bottom: 18rpx;
+  padding: 22rpx;
+}
+.avatar {
+  width: 92rpx;
+  height: 92rpx;
+  border-radius: 50%;
+  background: $brand-dark;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 38rpx;
+  font-weight: 700;
+}
+.coach-info {
+  flex: 1;
+  margin-left: 22rpx;
+}
+.coach-name {
+  font-size: 32rpx;
+  font-weight: 700;
+}
+.tags {
+  margin-top: 10rpx;
+  color: $brand;
+  font-size: 24rpx;
+}
+.arrow {
+  color: $muted;
+  font-size: 50rpx;
+}

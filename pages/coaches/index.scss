@@ -1,0 +1,57 @@
+@use '../../styles/tokens.scss' as *;
+
+.page {
+  padding: 32rpx;
+}
+.intro {
+  margin: 8rpx 0 22rpx;
+}
+.card {
+  display: flex;
+  margin-bottom: 20rpx;
+}
+.avatar {
+  flex: 0 0 100rpx;
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50%;
+  background: $brand-dark;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 40rpx;
+  font-weight: 700;
+}
+.body {
+  margin-left: 22rpx;
+  flex: 1;
+}
+.name {
+  font-size: 34rpx;
+  font-weight: 700;
+}
+.title {
+  color: $brand;
+  font-size: 25rpx;
+  margin-top: 5rpx;
+}
+.bio {
+  margin-top: 14rpx;
+  line-height: 1.5;
+  font-size: 27rpx;
+}
+.specialties {
+  color: $muted;
+  margin-top: 12rpx;
+  font-size: 24rpx;
+}
+.outline {
+  margin: 20rpx 0 0;
+  width: 220rpx;
+  border: 1px solid $brand;
+  color: $brand;
+  background: #fff;
+  border-radius: 12rpx;
+  font-size: 25rpx;
+}
