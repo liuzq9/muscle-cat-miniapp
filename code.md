@@ -6,7 +6,7 @@
 - 安装工作区推荐扩展：Vue - Official（Volar）、Prettier、ESLint、EditorConfig。
 - 保存文件时会自动运行 Prettier；ESLint 修复需要在状态栏或命令面板执行“ESLint: Fix all auto-fixable Problems”。
 - 统一使用 UTF-8、LF 换行、2 个空格缩进，不使用 Tab。
-- 源码目录保持 uni-app 根目录结构，`dist` 和 `unpackage` 仅作为构建产物，不手工编辑。
+- 源码目录保持 uni-app 根目录结构，本项目统一使用根目录下的 `dist` 作为构建产物，不使用 HBuilderX 的 `unpackage` 输出目录，也不手工编辑构建产物。
 
 ### 微信开发者工具编辑器边界
 

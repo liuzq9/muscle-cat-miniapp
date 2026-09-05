@@ -69,7 +69,7 @@
 
 ## 4. 数据模型
 
-前端领域类型位于 `src/types/domain.ts`，字段约定如下：
+前端领域类型位于 `types/domain.ts`，字段约定如下：
 
 | 对象             | 关键字段                                                                                     |
 | ---------------- | -------------------------------------------------------------------------------------------- |
@@ -85,6 +85,8 @@
 ## 5. API 契约
 
 真实 API 基础地址由 `VITE_API_BASE_URL` 提供，默认 `http://localhost:3000/api`。前端适配层必须保持以下路径：
+
+所有成功响应统一为 `{ code: 0, message: 'success', data }`；HTTP 或业务异常统一为 `{ code, message, data: null }`。前端 `services/http/client.ts` 会自动解包成功响应中的 `data`，并将异常转换为 `ApiError`。
 
 ```text
 GET    /studio
@@ -107,7 +109,7 @@ GET    /attendance/history?memberId=:memberId
 
 - `VITE_USE_MOCK` 缺省或为 `true` 时使用本地 mock，不依赖后端即可预览页面。
 - mock 至少覆盖工作室、3 位教练、课程和排期；排期应包含可约与已约状态。
-- `VITE_USE_MOCK=false` 时所有数据通过 `src/services/api.ts` 请求后端。
+- `VITE_USE_MOCK=false` 时所有数据通过 `services/http/` 和 `services/api/` 请求后端；`services/api.ts` 仅作为现有页面的兼容出口。
 - mock 模式下预约、取消、改期和扫码核销可以返回演示结果；列表数据为空属于当前已知限制，不应误认为后端已持久化。
 
 ## 7. 非功能要求
