@@ -2,10 +2,13 @@
 import { onMounted, ref } from 'vue'
 import { api } from '@/services/api'
 import type { AttendanceRecord, Booking } from '@/types/domain'
+import { getMember, getMemberId, isLoggedIn } from '@/services/auth'
 const bookings = ref<Booking[]>([])
 const history = ref<AttendanceRecord[]>([])
 const activeTab = ref<'upcoming' | 'history'>('upcoming')
+const goLogin = () => uni.navigateTo({ url: '/pages/login/index' })
 onMounted(async () => {
+  if (!isLoggedIn()) return
   ;[bookings.value, history.value] = await Promise.all([api.bookings(), api.history()])
 })
 const cancel = async (booking: Booking) => {
@@ -17,7 +20,7 @@ const cancel = async (booking: Booking) => {
     }),
   )
   if (result) {
-    await api.cancelBooking(booking.id)
+    await api.cancelBooking(booking.id, getMemberId())
     booking.status = 'cancelled'
     uni.showToast({ title: '已取消', icon: 'success' })
   }
@@ -29,10 +32,13 @@ const reschedule = (booking: Booking) =>
 </script>
 <template>
   <view class="page"
-    ><view class="profile panel"
+    ><view class="profile panel" @tap="!isLoggedIn() && goLogin()"
       ><view class="avatar">会</view
       ><view
-        ><view class="name">肌肉猫会员</view><view class="muted">保持节奏，持续进步</view></view
+        ><view class="name">{{ getMember()?.nickname || '登录肌肉猫' }}</view
+        ><view class="muted">{{
+          isLoggedIn() ? '保持节奏，持续进步' : '登录后查看预约和上课记录'
+        }}</view></view
       ></view
     ><view class="tabs"
       ><view :class="{ active: activeTab === 'upcoming' }" @tap="activeTab = 'upcoming'"

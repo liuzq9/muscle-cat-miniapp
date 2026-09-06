@@ -3,7 +3,7 @@
 </script>
 
 <style lang="scss">
-@use './styles/tokens.scss' as *;
+@use './styles/global.scss';
 
 page {
   background: $page-bg;

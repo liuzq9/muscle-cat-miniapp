@@ -1,5 +1,7 @@
 export { attendanceApi } from './attendance'
 export type { VerifyAttendancePayload } from './attendance'
+export { authApi } from './auth'
+export type { BindPhonePayload, LoginResult, WechatLoginPayload } from './auth'
 export { bookingApi } from './booking'
 export type { CreateBookingPayload, RescheduleBookingPayload } from './booking'
 export { coachApi } from './coach'

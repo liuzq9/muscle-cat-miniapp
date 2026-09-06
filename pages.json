@@ -4,7 +4,8 @@
     { "path": "pages/coaches/index", "style": { "navigationBarTitleText": "选择教练" } },
     { "path": "pages/booking/index", "style": { "navigationBarTitleText": "预约私教课" } },
     { "path": "pages/mine/index", "style": { "navigationBarTitleText": "我的课程" } },
-    { "path": "pages/checkin/index", "style": { "navigationBarTitleText": "扫码核销" } }
+    { "path": "pages/checkin/index", "style": { "navigationBarTitleText": "扫码核销" } },
+    { "path": "pages/login/index", "style": { "navigationBarTitleText": "登录肌肉猫" } }
   ],
   "tabBar": {
     "color": "#7b8088",

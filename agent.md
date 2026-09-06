@@ -13,6 +13,7 @@
 以下功能属于第一版范围，详细规则以 `docs.md` 为准：
 
 - 工作室成立介绍、地址、营业时间和联系方式展示。
+- 微信登录、手机号绑定和会员身份持久化。
 - 教练列表、教练简介、擅长方向及其课程展示。
 - 按教练选择课程、未来 7 天日期和 07:00-20:00 的整点时间段。
 - 已被预约或关闭的时段置灰且不可选择，预约成功后展示预约码/二维码。
@@ -55,6 +56,7 @@ muscle-cat-miniapp/
 ├── services/api.ts            # 兼容现有页面的 API 出口
 ├── types/domain.ts            # Studio、Coach、Course、Schedule 等领域类型
 ├── styles/tokens.scss         # 品牌色、间距、状态色等 SCSS 变量
+├── styles/global.scss         # 全局 CSS 类，通过 App.vue 引入
 ├── App.vue                    # 应用入口
 ├── main.ts                    # Vue/uni-app 启动入口
 ├── pages.json                 # 页面路由、tabBar、全局样式
@@ -88,6 +90,8 @@ muscle-cat-miniapp/
 - API 请求集中在 `services/http/` 和 `services/api/`，页面不直接调用 `uni.request` 或拼接重复的请求实现。
 - 优先复用 `types/domain.ts` 的类型；避免 `any`，只有处理 uni-app 页面 options 等无类型对象时才局部使用。
 - 样式使用 SCSS 和 `styles/tokens.scss` 变量；页面专属样式使用 `scoped`，嵌套不超过三层。
+- Sass 变量由 `vite.config.ts` 的 `additionalData` 全局注入；通用 CSS 类放在 `styles/global.scss`，页面样式文件不重复引入变量文件。
+- `tsconfig.json` 使用兼容微信开发者工具的 `moduleResolution: Node`；Vue 单文件组件类型由 `types/vue.d.ts` 声明。
 - 时间统一使用 `YYYY-MM-DD` 和 `HH:mm`；状态值使用领域类型中的固定字符串。
 - 交互要处理加载、空数据、失败和不可用状态；异步操作避免重复提交，并给用户明确反馈。
 - 文案、颜色、间距和状态样式保持现有设计语言，不引入无必要的组件库或全局重构。
