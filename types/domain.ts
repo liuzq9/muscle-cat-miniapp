@@ -51,3 +51,11 @@ export interface AttendanceRecord extends Booking {
   completedAt?: string
   verifiedBy?: string
 }
+
+export interface Member {
+  id: string
+  nickname: string
+  avatarUrl?: string
+  phone?: string
+  phoneBound: boolean
+}

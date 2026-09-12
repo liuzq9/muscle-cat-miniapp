@@ -1,0 +1,17 @@
+@use './tokens.scss' as *;
+
+.panel {
+  background: #fff;
+  border-radius: $radius;
+  padding: 28rpx;
+}
+
+.section-title {
+  font-size: 34rpx;
+  font-weight: 700;
+}
+
+.muted {
+  color: $muted;
+  font-size: 26rpx;
+}

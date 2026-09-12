@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { computed, onMounted, ref } from 'vue'
 import { api } from '@/services/api'
+import { getMemberId, isLoggedIn } from '@/services/auth'
 import type { Coach, Course, Schedule } from '@/types/domain'
 const coach = ref<Coach>()
 const courses = ref<Course[]>([])
@@ -40,6 +41,10 @@ async function changeDate(date: string) {
   selectedSlot.value = undefined
 }
 async function submit() {
+  if (!isLoggedIn()) {
+    uni.navigateTo({ url: '/pages/login/index' })
+    return
+  }
   if (!selectedSlot.value || !selectedCourse.value || loading.value)
     return uni.showToast({ title: '请选择课程和时间', icon: 'none' })
   loading.value = true
@@ -53,7 +58,7 @@ async function submit() {
     }
     const booking = bookingId.value
       ? await api.rescheduleBooking(bookingId.value, payload)
-      : await api.createBooking({ memberId: 'demo-member', ...payload })
+      : await api.createBooking({ memberId: getMemberId(), ...payload })
     if (!bookingId.value) qrUrl.value = await api.bookingQr(booking.id)
     uni.showModal({
       title: bookingId.value ? '改期成功' : '预约成功',

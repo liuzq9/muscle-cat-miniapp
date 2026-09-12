@@ -1,0 +1,34 @@
+.login-card {
+  margin-top: 30vh;
+  text-align: center;
+}
+
+.brand {
+  font-size: 42rpx;
+  font-weight: 700;
+  color: $brand;
+}
+
+.title {
+  margin-top: 24rpx;
+  font-size: 34rpx;
+  font-weight: 600;
+}
+
+.muted {
+  margin-top: 16rpx;
+}
+
+.primary {
+  margin-top: 48rpx;
+}
+
+.secondary {
+  margin-top: 20rpx;
+}
+
+.hint {
+  margin-top: 24rpx;
+  font-size: 22rpx;
+  color: $muted;
+}
