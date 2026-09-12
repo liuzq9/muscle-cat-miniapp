@@ -26,7 +26,8 @@ const go = (url: string) => uni.navigateTo({ url })
       <view class="story">{{ studio?.story }}</view>
       <view class="meta">{{ studio?.address }} · {{ studio?.hours }}</view>
     </view>
-    <view class="section-title coach-heading bg-color">五位教练，各有专长</view>
+    <view class="section-title coach-heading">三位教练，各有特点</view>
+    <view class="section-title coach-heading">教练信息</view>
     <view
       v-for="coach in coaches"
       :key="coach.id"
